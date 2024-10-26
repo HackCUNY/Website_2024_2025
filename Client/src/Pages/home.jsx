@@ -14,9 +14,9 @@ const Example_div = styled.div`
 
 function Home() {
   return (
-    // Import Hero Section First test
+    // Import Hero Section First
     // Import About Section Second
-    // Import Registration Section Here
+    // Import Registration Section Third
     // In this order
     <div >
       <Hero/>
