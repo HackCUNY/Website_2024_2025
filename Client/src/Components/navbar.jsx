@@ -2,15 +2,20 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { NavLink as RouterNavLink } from 'react-router-dom';
 import logo from '../assets/hack_cuny_logo_1.png';
+import railsLogo from '../assets/navbar_rails.png';
 
 const NavContainer = styled.nav`
+  width: 120%;
   background-color: #000;
+  overflow: hidden;
   padding: 1rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  left: -10%
 `;
 
 const NavContent = styled.div`
-  max-width: 1200px;
+  max-width: 1200px
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -23,12 +28,23 @@ const Logo = styled.img`
   cursor: pointer;
 `;
 
+const RailsLogo = styled.img`
+  position: absolute;
+  right: 40%;
+  height: 11vw;
+  width: auto;
+  z-index: 0; 
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+
 const DesktopMenu = styled.div`
   display: none;
   @media (min-width: 768px) {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
   }
 `;
 
@@ -117,6 +133,7 @@ function Navbar() {
         <RouterNavLink to="/">
           <Logo src={logo} alt="HACKCUNY Logo" />
         </RouterNavLink>
+        <RailsLogo src={railsLogo} alt="NYC Rails" />
         <DesktopMenu>
           <NavLink to="/" exact>
             Home
