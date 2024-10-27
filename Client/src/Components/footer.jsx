@@ -43,6 +43,7 @@ const CenterContent = styled.div`
 const SocialLinks = styled.div`
   display: flex;
   gap: 0.5rem;
+  padding-bottom: 0.5rem;
 `;
 
 const LinkStyled = styled.a`
