@@ -18,7 +18,7 @@ function App() {
   const Layout = () => {
     return (
       <>
-        <div style={{ paddingLeft: "8%", paddingRight: "8%", background: "black", color: "white" }}>
+        <div style={{background: "black", color: "white" }}>
           <Navbar />
           <Outlet />
           <Footer />
