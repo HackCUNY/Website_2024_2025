@@ -5,13 +5,15 @@ import logo from '../assets/hack_cuny_logo_1.png';
 import railsLogo from '../assets/navbar_rails.png';
 
 const NavContainer = styled.nav`
-  width: 120%;
+  width: 100%;
   background-color: #000;
   overflow: hidden;
   padding: 1rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  position: relative;
-  left: -10%
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
 `;
 
 const NavContent = styled.div`
@@ -116,6 +118,7 @@ const MobileMenuButton = styled.button`
 const MobileMenu = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 1rem;
   padding-top: 1rem;
   @media (min-width: 768px) {
