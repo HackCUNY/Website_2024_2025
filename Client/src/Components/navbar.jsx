@@ -140,7 +140,7 @@ function Navbar() {
           <NavLink to="/schedule">
             Schedule
           </NavLink>
-          <NavLink to="/team">
+          <NavLink to="/our_team">
             Our Team
           </NavLink>
           <NavLink to="/sponsors">
@@ -149,7 +149,7 @@ function Navbar() {
           <NavLink to="/faqs">
             FAQS
           </NavLink>
-          <ApplyButton href="/apply">Apply</ApplyButton>
+          <ApplyButton href="/">Apply</ApplyButton>
         </DesktopMenu>
         <MobileMenuButton onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
           {isOpen ? '✕' : '☰'}
@@ -163,7 +163,7 @@ function Navbar() {
           <NavLink to="/schedule" onClick={() => setIsOpen(false)}>
             Schedule
           </NavLink>
-          <NavLink to="/team" onClick={() => setIsOpen(false)}>
+          <NavLink to="/our_team" onClick={() => setIsOpen(false)}>
             Our Team
           </NavLink>
           <NavLink to="/sponsors" onClick={() => setIsOpen(false)}>
@@ -172,7 +172,7 @@ function Navbar() {
           <NavLink to="/faqs" onClick={() => setIsOpen(false)}>
             FAQS
           </NavLink>
-          <ApplyButton href="/apply" onClick={() => setIsOpen(false)}>
+          <ApplyButton href="/" onClick={() => setIsOpen(false)}>
             Apply
           </ApplyButton>
         </MobileMenu>
