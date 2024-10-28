@@ -92,6 +92,7 @@ const RegisterButton = styled.button`
   cursor: pointer;
   transition: background-color 0.3s ease;
   align-self: center;
+  z-index: 2;
 
   &:hover {
     background-color: #3B82F6;
