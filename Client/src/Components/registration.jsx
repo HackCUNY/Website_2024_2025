@@ -132,20 +132,21 @@ const StatueBackground = styled.div`
   top: 0;
   right: 0;
   bottom: 0;
-  width: 40%;
+  left: 0; 
   background-image: url('/src/assets/registration_background.png');
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: right center;
+  background-position: center center; 
   opacity: 0.3;
   z-index: 1;
 
   @media (max-width: 768px) {
-    width: 60%;
+    background-size: cover; 
     background-position: center bottom;
     opacity: 0.2;
   }
 `;
+
 
 const ExcitingText = styled.p`
   font-size: 1.1rem;
