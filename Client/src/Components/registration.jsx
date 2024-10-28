@@ -17,6 +17,11 @@ const Title = styled.h1`
   margin-bottom: 3rem;
   border-bottom: 6px solid #3B82F6;
   padding-bottom: 0.5rem;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
 `;
 
 const ContentContainer = styled.div`
@@ -28,6 +33,11 @@ const ContentContainer = styled.div`
   max-width: 1200px;
   position: relative;
   z-index: 2;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
 `;
 
 const CityImageContainer = styled.div`
@@ -35,11 +45,15 @@ const CityImageContainer = styled.div`
   max-width: 500px;
   border-radius: 20px;
   overflow: hidden;
-  
+
   img {
     width: 100%;
     height: auto;
     display: block;
+  }
+
+  @media (max-width: 768px) {
+    max-width: 100%;
   }
 `;
 
@@ -48,6 +62,11 @@ const InfoContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
+
+  @media (max-width: 768px) {
+    align-items: center;
+    text-align: center;
+  }
 `;
 
 const InterestItem = styled.div`
@@ -55,7 +74,7 @@ const InterestItem = styled.div`
   align-items: center;
   gap: 0.5rem;
   font-size: 1.1rem;
-  
+
   &:before {
     content: "✓";
     color: #3B82F6;
@@ -72,10 +91,16 @@ const RegisterButton = styled.button`
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  align-self: center;
 
   &:hover {
     background-color: #3B82F6;
     color: white;
+  }
+
+  @media (max-width: 768px) {
+    padding: 0.6rem 1.5rem;
+    font-size: 1rem;
   }
 `;
 
@@ -87,11 +112,19 @@ const TrainContainer = styled.div`
   align-items: center;
   gap: 2rem;
   margin-top: 2rem;
+
+  @media (max-width: 768px) {
+    gap: 1rem;
+  }
 `;
 
 const Train = styled.img`
   width: 150px;
   height: auto;
+
+  @media (max-width: 768px) {
+    width: 100px;
+  }
 `;
 
 const StatueBackground = styled.div`
@@ -106,6 +139,12 @@ const StatueBackground = styled.div`
   background-position: right center;
   opacity: 0.3;
   z-index: 1;
+
+  @media (max-width: 768px) {
+    width: 60%;
+    background-position: center bottom;
+    opacity: 0.2;
+  }
 `;
 
 const ExcitingText = styled.p`
@@ -113,6 +152,11 @@ const ExcitingText = styled.p`
   margin-top: 1rem;
   font-style: italic;
   color: #a3b1c6;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
 `;
 
 export default function Registration() {
