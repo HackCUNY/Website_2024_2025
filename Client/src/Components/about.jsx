@@ -79,8 +79,8 @@ const IconBox = styled.div`
   background: white;
   border-radius: 12px;
   border: 2px solid #3B82F6;
-  width: 90px;
-  height: 90px;
+  width: 120px;
+  height: 120px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -125,7 +125,7 @@ export default function About() {
         {features.slice(0, 4).map(feature => (
           <IconContainer key={feature.id}>
             <IconBox>
-              <img src={feature.icon} alt={`${feature.name} Icon`} width="40" height="40" />
+              <img src={feature.icon} alt={`${feature.name} Icon`} width="100" height="100" />
             </IconBox>
             <IconLabel>{feature.name}</IconLabel>
           </IconContainer>
