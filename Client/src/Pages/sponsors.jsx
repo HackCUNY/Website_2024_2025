@@ -84,7 +84,7 @@ const SponsorsItem = styled.a`
   }
 `;
 
-const SponsorsItemImg = styled.img`
+const SponsorsItemImage = styled.img`
   max-height: 12.5rem;
   max-width: 100%;
 `;
@@ -93,9 +93,9 @@ const SponsorsItemImg = styled.img`
 export default function Sponsors() {
 
   const sponsors = [
-    { id: 1, name: 'Huly', icon: SponsorsHulyImg, link: "https://huly.app/" },
-    // { id: 2, name: 'Major League Hacking', icon: "https://static.mlh.io/brand-assets/logo/official/mlh-logo-color.png", link: "https://mlh.io/" },
-    { id: 3, name: 'John Jay College of Criminal Justice', icon: SponsorsJJayImg, link: "https://www.jjay.cuny.edu/" }
+    { id: 1, name: 'Huly', image: SponsorsHulyImg, link: "https://huly.app/" },
+    // { id: 2, name: 'Major League Hacking', image: "https://static.mlh.io/brand-assets/logo/official/mlh-logo-color.png", link: "https://mlh.io/" },
+    { id: 3, name: 'John Jay College of Criminal Justice', image: SponsorsJJayImg, link: "https://www.jjay.cuny.edu/" }
   ];
 
   return (
@@ -109,7 +109,7 @@ export default function Sponsors() {
       <SponsorsGrid>
         {sponsors.map(sponsor => (
           <SponsorsItem key={sponsor.id} href={sponsor.link} target="_blank">
-            <SponsorsItemImg src={sponsor.icon} alt={`${sponsor.name} Icon`} />
+            <SponsorsItemImage src={sponsor.image} alt={`${sponsor.name} Icon`} />
             {/* <h2>{sponsor.name}</h2> */}
           </SponsorsItem>
         ))}
