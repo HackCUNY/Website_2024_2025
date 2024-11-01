@@ -2,7 +2,7 @@ import { useState } from 'react';
 import styled from 'styled-components';
 import { NavLink as RouterNavLink } from 'react-router-dom';
 import railsLogo from '../assets/navbar_rails.png';
-import logo from '../assets/navbar_hack_cuny_logo_1';
+import logo from '../assets/navbar_hack_cuny_logo_1.png';
 
 const NavContainer = styled.nav`
   width: 100%;
