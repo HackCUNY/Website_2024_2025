@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { FaInstagram } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
 import logo from '../assets/hack_cuny_logo_1.png';
-import footerLogo from '../assets/footer_cuny.png';
+import footerLogo from '../assets/footer_hack_cuny_logo_1';
 
 const FooterContainer = styled.footer`
   position: relative;

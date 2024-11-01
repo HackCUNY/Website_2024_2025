@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
 import { NavLink as RouterNavLink } from 'react-router-dom';
-import logo from '../assets/hack_cuny_logo_1.png';
 import railsLogo from '../assets/navbar_rails.png';
+import logo from '../assets/navbar_hack_cuny_logo_1';
 
 const NavContainer = styled.nav`
   width: 100%;
