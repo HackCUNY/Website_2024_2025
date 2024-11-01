@@ -8,10 +8,43 @@ const Example_div = styled.div`
   color: red;
 `
 
+const ScheduleContainer = styled.div`
+  min-height: 100vh;
+  width: 100%;
+`
+
+const ScheduleHeader = styled.div`
+  font-weight: bold;
+  text-align: center;
+  font-size: 40px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding-top: 25px;
+`
+
+const Divider = styled.div`
+  min-height: 14px;
+  width: 100%;
+  max-width: 383px;
+  
+  background-color: #4275EC;
+  border-style: solid;
+  border-width: 1px;
+  border-color: white;
+  border-radius: 10px;
+`
+
 export default function Schedule() {
   return (
-    <div>
-      Schedule
-    </div>
+    <ScheduleContainer>
+      <ScheduleHeader>
+        Schedule
+        <Divider>
+        </Divider>
+      </ScheduleHeader>
+    </ScheduleContainer>
   )
 }
