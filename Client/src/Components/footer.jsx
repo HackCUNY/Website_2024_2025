@@ -8,7 +8,6 @@ const FooterContainer = styled.footer`
   position: relative;
   background-color: #3B82F6;
   padding: 1rem;
-  margin-top: 1rem;
   width: 100%;
   box-sizing: border-box;
 `;
