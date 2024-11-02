@@ -1,11 +1,5 @@
-// import React from 'react'
 import styled from 'styled-components';
 import scheduleBackgroundImage from '../assets/schedule_background.png';
-
-
-// For CSS styling, follow format below to prevent mergin conflict.
-// Make sure you only code on your designated page. Don't Change any other file.*
-// delete below when done
 
 const MainContainer = styled.div`
   min-height: 100vh;
@@ -53,19 +47,19 @@ const ScheduleParentContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100%; 
 
   background-image: url(${scheduleBackgroundImage});
   background-size: cover;
   background-position: center;
-  height: 100%; 
 `
 
 const ScheduleContainer = styled.div`
   height: 100%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-
   gap: 40px;
+
   padding-left: 25px;
   padding-right: 25px;
   margin-top: 25px;
@@ -161,13 +155,17 @@ const dates = [
     events: schedule28th
   },
   {
-    date: "Friday, March 28th",
+    date: "Friday, March 29th",
     events: schedule28th
   },
   {
-    date: "Friday, March 28th",
+    date: "Friday, March 30th",
     events: schedule28th
   },
+  {
+    date: "Friday, March 31st",
+    events: schedule28th
+  }
 ]
 
 export default function Schedule() {
@@ -175,36 +173,31 @@ export default function Schedule() {
     <MainContainer>
       <HeaderContainer>
         <ScheduleHeader>
-          <h5>Schedule</h5>
+          Schedule
           <Divider/>
         </ScheduleHeader>
       </HeaderContainer>
       <ScheduleParentContainer>
-        {/* <ScheduleBackground src={scheduleBackgroundImage}/> */}
         <ScheduleContainer>
           {dates.map((d) => (
             <ScheduleGridItem>
-              <div>
-
-                <DateContainer>
-                  {d.date}
-                </DateContainer>
-
-                <Divider/>
-                <ScheduleGridItemInner>
-                  {d.events.map((s) => (
-                    <div>
-                      <ScheduleGridItemUpper>
-                        <span>{s.time}</span>
-                        <span>{s.location}</span>
-                      </ScheduleGridItemUpper>
-                      <ScheduleGridItemLower>
-                        {s.title}
-                      </ScheduleGridItemLower>
-                    </div>
-                  ))}
-                </ScheduleGridItemInner>
-              </div>
+              <DateContainer>
+                {d.date}
+              </DateContainer>
+              <Divider/>
+              <ScheduleGridItemInner>
+                {d.events.map((s) => (
+                  <div>
+                    <ScheduleGridItemUpper>
+                      <span>{s.time}</span>
+                      <span>{s.location}</span>
+                    </ScheduleGridItemUpper>
+                    <ScheduleGridItemLower>
+                      {s.title}
+                    </ScheduleGridItemLower>
+                  </div>
+                ))}
+              </ScheduleGridItemInner>
             </ScheduleGridItem>
           ))}
         </ScheduleContainer>
