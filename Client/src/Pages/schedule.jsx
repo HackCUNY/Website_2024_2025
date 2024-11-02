@@ -48,6 +48,7 @@ const ScheduleParentContainer = styled.div`
   flex-direction: column;
   align-items: center;
   height: 100%; 
+  padding-bottom: 25px;
 
   background-image: url(${scheduleBackgroundImage});
   background-size: cover;
