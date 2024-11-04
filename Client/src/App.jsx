@@ -12,6 +12,7 @@ import Our_Team from './Pages/our_team';
 import FAQS from './Pages/faqs';
 import Schedule from './Pages/schedule';
 import Sponsors from './Pages/sponsors';
+import Previous_Hackathon from './Components/previous_hackathon';
 
 function App() {
 
@@ -51,6 +52,10 @@ function App() {
         {
           path: "/sponsors",
           element: <Sponsors/>,
+        },
+        {
+          path: "/previous-hackathon", 
+          element: <Previous_Hackathon />,
         },
       ]
     },
