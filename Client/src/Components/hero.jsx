@@ -2,19 +2,21 @@ import styled from "styled-components";
 import prevHack16 from "../assets/prev-hack-16.jpg";
 import cunyLogo from "../assets/navbar_hack_cuny_logo_1.png";
 import prevHack24 from "../assets/prev-hack-24.jpg";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const MainScreen = styled.div`
   min-height: screen.height;
-  background-color: #000;
 `;
 
 const MainImage = styled.div`
   width: 100%;
   height: auto;
-  position: relative;
+  position: relative; /* Add relative positioning */
   img {
     width: 100%;
-    max-height: 500px;
+    max-height: 500px; /* Adjust this value as needed */
     object-fit: cover;
   }
 `;
@@ -58,13 +60,11 @@ const TextBox = styled.div`
 const Divider = styled.div`
   height: 15px;
   width: 100%;
-
   background-color: #4275ec;
   border-style: solid;
   border-width: 1px;
   border-color: white;
   border-radius: 10px;
-
   margin-top: 5px;
   margin-bottom: 10px;
 `;
@@ -72,7 +72,19 @@ const Divider = styled.div`
 const RegisterContainer = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 20px auto;
+`;
+
+const Register = styled.p`
+  color: #fff;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 20px;
+  width: 60%;
 `;
 
 const RegisterButton = styled.button`
@@ -85,8 +97,6 @@ const RegisterButton = styled.button`
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  align-self: center;
-  z-index: 2;
 
   &:hover {
     background-color: #3b82f6;
@@ -99,15 +109,72 @@ const RegisterButton = styled.button`
   }
 `;
 
-const Register = styled.p`
-  color: #fff;
-  font-size: 1.5rem;
-  text-align: center;
-  margin-top: 20px;
-  width: 60%;
+const Container = styled.div`
+  display: flex;
+  flex-direction: row;
 `;
 
+const CarouselContainer = styled.div`
+  width: 50%;
+  margin: 20px auto;
+`;
+
+const CarouselImage = styled.img`
+  width: 100%;
+  max-height: 700px;
+  object-fit: cover;
+`;
+
+const Arrow = styled.div`
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  cursor: pointer;
+  font-size: 2rem;
+  color: white;
+  &:hover {
+    color: #3b82f6;
+  }
+`;
+
+const PrevArrow = styled(Arrow)`
+  left: 10px;
+`;
+
+const NextArrow = styled(Arrow)`
+  right: 10px;
+`;
+
+function SamplePrevArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <PrevArrow className={className} style={{ ...style }} onClick={onClick}>
+      &#9664;
+    </PrevArrow>
+  );
+}
+
+function SampleNextArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <NextArrow className={className} style={{ ...style }} onClick={onClick}>
+      &#9654;
+    </NextArrow>
+  );
+}
+
 export default function Hero() {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
+  };
+
   return (
     <MainScreen>
       <MainImage>
@@ -129,14 +196,27 @@ export default function Hero() {
           </TextBox>
         </LogoContainer>
       </MainImage>
-      <RegisterContainer>
-        <Register>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco
-        </Register>
-        <RegisterButton>Register</RegisterButton>
-      </RegisterContainer>
+      <Container>
+        <RegisterContainer>
+          <Register>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco
+          </Register>
+          <RegisterButton>Register</RegisterButton>
+        </RegisterContainer>
+
+        <CarouselContainer>
+          <Slider {...settings}>
+            <div>
+              <CarouselImage src={prevHack16} alt="Slide 1" />
+            </div>
+            <div>
+              <CarouselImage src={prevHack24} alt="Slide 2" />
+            </div>
+          </Slider>
+        </CarouselContainer>
+      </Container>
     </MainScreen>
   );
 }
