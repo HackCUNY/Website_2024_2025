@@ -39,11 +39,29 @@ const LogoContainer = styled.div`
     max-width: 700px;
     height: auto;
   }
+
+  @media (max-width: 1024px) {
+    img {
+      max-width: 500px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    img {
+      max-width: 300px;
+    }
+  }
+
+  @media (max-width: 428px) {
+    img {
+      display: none;
+    }
+  }
 `;
 
 const TextBox = styled.div`
   background-color: rgba(255, 255, 255, 0.8);
-  padding: 30px;
+  padding: 3rem;
   border-radius: 20px;
   max-width: 600px;
   justify-content: center;
@@ -60,6 +78,52 @@ const TextBox = styled.div`
     font-size: 1.5rem;
     color: #000;
   }
+
+  @media (max-width: 1024px) {
+    max-width: 400px;
+    justify-content: around;
+    padding: 2rem;
+    h1 {
+      font-size: 1.8rem;
+    }
+    h2 {
+      font-size: 1.5rem;
+    }
+    p {
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    max-width: 300px;
+    padding: 1rem;
+    justify-content: around;
+    h1 {
+      font-size: 1rem;
+    }
+    h2 {
+      font-size: 0.8rem;
+    }
+    p {
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 320px) {
+    justify-content: around;
+    flex-direction: row;
+    padding: 1rem;
+    h1 {
+      font-size: 1rem;
+    }
+    h2 {
+      font-size: 0.8rem;
+      margin-bottom: 0.2rem;
+    }
+    p {
+      font-size: 0.7rem;
+    }
+  }
 `;
 
 const Divider = styled.div`
@@ -72,6 +136,40 @@ const Divider = styled.div`
   border-radius: 10px;
   margin-top: 5px;
   margin-bottom: 10px;
+
+  @media (max-width: 768px) {
+    height: 10px;
+  }
+
+  @media (max-width: 320px) {
+    height: 5px;
+  }
+`;
+
+const ContentContainer = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  gap: 4rem;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  @media (max-width: 320px) {
+    padding: 0 10px;
+    gap: 2rem;
+  }
 `;
 
 const RegisterContainer = styled.div`
@@ -80,10 +178,8 @@ const RegisterContainer = styled.div`
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  max-width: 1200px;
-  margin: 20px auto;
   max-width: 800px;
-  padding: 0 20px;
+  width: 100%;
 `;
 
 const Register = styled.p`
@@ -91,7 +187,11 @@ const Register = styled.p`
   font-size: 1.5rem;
   text-align: center;
   margin-top: 20px;
-  width: 60%;
+  width: 100%;
+
+  @media (max-width: 320px) {
+    font-size: 1rem;
+  }
 `;
 
 const RegisterButton = styled.button`
@@ -110,21 +210,21 @@ const RegisterButton = styled.button`
     color: white;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 320px) {
     padding: 0.6rem 1.5rem;
     font-size: 1rem;
+    flex-direction: column;
   }
 `;
 
 const Container = styled.div`
-  display: flex;
-  flex-direction: row;
+  // display: flex;
+  // flex-direction: row;
 `;
 
 const CarouselContainer = styled.div`
   width: 100%;
   max-width: 850px;
-  margin: 20px auto;
   position: relative;
 
   .slick-dots {
@@ -150,6 +250,7 @@ const CarouselImage = styled.img`
   width: 100%;
   max-height: 500px;
   object-fit: cover;
+  border-radius: 20px;
 `;
 
 const Arrow = styled.div`
@@ -220,32 +321,31 @@ export default function Hero() {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint.
             </p>
           </TextBox>
         </LogoContainer>
       </MainImage>
       <Container>
-        <RegisterContainer>
-          <Register>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco
-          </Register>
-          <RegisterButton>Register</RegisterButton>
-        </RegisterContainer>
+        <ContentContainer>
+          <RegisterContainer>
+            <Register>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco
+            </Register>
+            <RegisterButton>Register</RegisterButton>
+          </RegisterContainer>
 
-        <CarouselContainer>
-          <Slider {...settings}>
-            {images.map((image, index) => (
-              <div key={index}>
-                <CarouselImage src={image} alt={`Slide ${index}`} />
-              </div>
-            ))}
-          </Slider>
-        </CarouselContainer>
+          <CarouselContainer>
+            <Slider {...settings}>
+              {images.map((image, index) => (
+                <div key={index}>
+                  <CarouselImage src={image} alt={`Slide ${index}`} />
+                </div>
+              ))}
+            </Slider>
+          </CarouselContainer>
+        </ContentContainer>
       </Container>
     </MainScreen>
   );
