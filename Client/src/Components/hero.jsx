@@ -24,6 +24,11 @@ const MainImage = styled.div`
     max-height: 500px;
     object-fit: cover;
   }
+
+  @media (max-width: 763px) {
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 const LogoContainer = styled.div`
@@ -46,9 +51,15 @@ const LogoContainer = styled.div`
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1296px) {
     img {
       max-width: 300px;
+    }
+  }
+
+  @media (max-width: 763px) {
+    img {
+      display: none;
     }
   }
 
@@ -109,6 +120,11 @@ const TextBox = styled.div`
     }
   }
 
+  @media (max-width: 763px) {
+    justify-content: center;
+    align-items: center;
+  }
+
   @media (max-width: 320px) {
     justify-content: around;
     flex-direction: row;
@@ -160,7 +176,7 @@ const ContentContainer = styled.div`
     gap: 4rem;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1296px) {
     flex-direction: column;
     align-items: center;
     gap: 3rem;
