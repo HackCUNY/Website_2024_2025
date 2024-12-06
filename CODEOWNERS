@@ -1,6 +1,0 @@
-# r0m3c is the default reviewer for all files in the repo
-* @r0m3c
-
-# Specific directories or files
-/Client/ @r0m3c
-/Server/ @r0m3c
